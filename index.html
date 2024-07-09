@@ -96,6 +96,18 @@
         .contact-form button:hover {
             background: #005bb5;
         }
+        .social-media {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .social-media a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #333;
+        }
+        .social-media a:hover {
+            color: #0779e4;
+        }
     </style>
 </head>
 <body>
@@ -165,6 +177,10 @@
                 <li>Phone: [Your Phone Number]</li>
                 <li>LinkedIn: <a href="[Your LinkedIn Profile]" target="_blank">[Your LinkedIn Profile]</a></li>
             </ul>
+            <div class="social-media">
+                <a href="https://twitter.com/[Your Twitter Handle]" target="_blank">Twitter</a>
+                <a href="https://github.com/[Your GitHub Username]" target="_blank">GitHub</a>
+            </div>
         </section>
     </div>
 
@@ -176,6 +192,16 @@
         document.getElementById('contact-form').addEventListener('submit', function(event) {
             event.preventDefault();
             alert('Message sent successfully!');
+        });
+
+        // Adding smooth scroll for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
         });
     </script>
 </body>
