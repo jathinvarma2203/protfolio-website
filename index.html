@@ -19,37 +19,34 @@
         header {
             background: #333;
             color: #fff;
-            padding-top: 30px;
-            min-height: 70px;
+            padding: 30px 0;
             border-bottom: #0779e4 3px solid;
+            text-align: center;
         }
-        header a {
+        header h1 {
+            margin: 0;
+        }
+        nav ul {
+            padding: 0;
+            list-style: none;
+            text-align: center;
+        }
+        nav li {
+            display: inline;
+            padding: 0 20px;
+        }
+        nav a {
             color: #fff;
             text-decoration: none;
             text-transform: uppercase;
             font-size: 16px;
         }
-        header ul {
-            padding: 0;
-            list-style: none;
-        }
-        header li {
-            float: right;
-            display: inline;
-            padding: 0 20px 0 20px;
-        }
-        header #branding {
-            float: left;
-        }
-        header #branding h1 {
-            margin: 0;
-        }
         footer {
             padding: 20px;
-            margin-top: 20px;
             color: #fff;
             background-color: #333;
             text-align: center;
+            margin-top: 20px;
         }
         .content {
             padding: 20px;
@@ -58,6 +55,7 @@
         }
         .content h2, .content h3 {
             color: #333;
+            text-align: center;
         }
         .content ul {
             list-style: none;
@@ -69,20 +67,47 @@
             padding: 10px;
             border: #ccc 1px solid;
         }
+        .content .project {
+            margin: 20px 0;
+        }
+        .content .project img {
+            max-width: 100%;
+            height: auto;
+        }
+        .contact-form {
+            background: #f4f4f4;
+            padding: 20px;
+            border: #ccc 1px solid;
+            margin-top: 20px;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+        }
+        .contact-form button {
+            background: #0779e4;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .contact-form button:hover {
+            background: #005bb5;
+        }
     </style>
 </head>
 <body>
     <header>
         <div class="container">
-            <div id="branding">
-                <h1>Jathin Varma</h1>
-            </div>
+            <h1>Jathin Varma</h1>
             <nav>
                 <ul>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#skills">Skills</a></li>
                     <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -91,7 +116,7 @@
     <div class="container content">
         <section id="about">
             <h2>About Me</h2>
-            <p>I am Jathin Varma, a 10th grade student with a strong interest in computer science. I am passionate about learning new technologies and applying my skills to solve real-world problems.</p>
+            <p>I am Jathin Varma, a 10th grade student with a strong interest in computer science. I am passionate about learning new technologies and applying my skills to solve real-world problems. In my spare time, I enjoy exploring new programming languages and building small projects.</p>
         </section>
 
         <section id="skills">
@@ -105,20 +130,40 @@
 
         <section id="projects">
             <h2>Projects and Achievements</h2>
-            <ul>
-                <li>Developed a personal blog website using HTML and CSS.</li>
-                <li>Created several interactive stories and games using Scratch.</li>
-                <li>Wrote simple Python scripts for mathematical calculations and small automation tasks.</li>
-                <li>Won 2nd place in an inter-school coding competition.</li>
-            </ul>
+            <div class="project">
+                <h3>Personal Blog Website</h3>
+                <img src="path/to/image1.jpg" alt="Personal Blog">
+                <p>Developed a personal blog website using HTML and CSS.</p>
+            </div>
+            <div class="project">
+                <h3>Interactive Stories and Games</h3>
+                <img src="path/to/image2.jpg" alt="Scratch Projects">
+                <p>Created several interactive stories and games using Scratch.</p>
+            </div>
+            <div class="project">
+                <h3>Python Scripts</h3>
+                <img src="path/to/image3.jpg" alt="Python Scripts">
+                <p>Wrote simple Python scripts for mathematical calculations and small automation tasks.</p>
+            </div>
+            <div class="project">
+                <h3>Coding Competitions</h3>
+                <img src="path/to/image4.jpg" alt="Coding Competitions">
+                <p>Won 2nd place in an inter-school coding competition.</p>
+            </div>
         </section>
 
         <section id="contact">
             <h2>Contact Information</h2>
+            <form class="contact-form" id="contact-form">
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
             <ul>
                 <li>Email: [Your Email]</li>
                 <li>Phone: [Your Phone Number]</li>
-                <li>LinkedIn: [Your LinkedIn Profile]</li>
+                <li>LinkedIn: <a href="[Your LinkedIn Profile]" target="_blank">[Your LinkedIn Profile]</a></li>
             </ul>
         </section>
     </div>
@@ -126,6 +171,12 @@
     <footer>
         <p>Jathin Varma &copy; 2024</p>
     </footer>
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Message sent successfully!');
+        });
+    </script>
 </body>
 </html>
-
